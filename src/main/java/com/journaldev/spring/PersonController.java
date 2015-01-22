@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.journaldev.spring.model.Person;
 import com.journaldev.spring.service.PersonService;
 
+import java.util.Date;
+
 @Controller
 public class PersonController {
+
+	private static Date startupTime = new Date();
 	
 	private PersonService personService;
 	
@@ -25,6 +29,8 @@ public class PersonController {
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public String listPersons(Model model) {
+		model.addAttribute("currentTime", new Date());
+		model.addAttribute("startupTime", startupTime);
 		model.addAttribute("person", new Person());
 		model.addAttribute("listPersons", this.personService.listPersons());
 		return "person";

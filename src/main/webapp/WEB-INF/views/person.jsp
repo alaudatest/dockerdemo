@@ -13,11 +13,16 @@
 	</style>
 </head>
 <body>
+
+Start Up Time: ${startupTime} <br/>
+Current TIme: ${currentTime}
+
 <h1>
 	Add a Person
 </h1>
 
 <c:url var="addAction" value="/person/add" ></c:url>
+
 
 <form:form action="${addAction}" commandName="person">
 <table>
