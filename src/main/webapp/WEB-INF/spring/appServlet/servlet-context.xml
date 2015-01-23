@@ -26,9 +26,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource"
 		destroy-method="close">
-		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="driver" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
 			value="jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}" />
 		<beans:property name="username" value="${MYSQL_USER}" />

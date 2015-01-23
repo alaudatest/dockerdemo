@@ -26,6 +26,7 @@ public class PersonDAOImpl implements PersonDAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.persist(p);
 		logger.info("Person saved successfully, Person Details="+p);
+		session.close()
 	}
 
 	@Override
@@ -33,6 +34,7 @@ public class PersonDAOImpl implements PersonDAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.update(p);
 		logger.info("Person updated successfully, Person Details="+p);
+		session.close()
 	}
 
 	@SuppressWarnings("unchecked")
@@ -43,6 +45,7 @@ public class PersonDAOImpl implements PersonDAO {
 		for(Person p : personsList){
 			logger.info("Person List::"+p);
 		}
+		session.close()
 		return personsList;
 	}
 
@@ -51,6 +54,7 @@ public class PersonDAOImpl implements PersonDAO {
 		Session session = this.sessionFactory.getCurrentSession();		
 		Person p = (Person) session.load(Person.class, new Integer(id));
 		logger.info("Person loaded successfully, Person details="+p);
+		session.close()
 		return p;
 	}
 
@@ -62,6 +66,7 @@ public class PersonDAOImpl implements PersonDAO {
 			session.delete(p);
 		}
 		logger.info("Person deleted successfully, person details="+p);
+		session.close()
 	}
 
 }
