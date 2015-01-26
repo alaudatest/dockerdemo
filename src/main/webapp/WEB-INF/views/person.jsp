@@ -18,7 +18,7 @@ Start Up Time: ${startupTime} <br/>
 Current TIme: ${currentTime}
 
 <h1>
-	Add a Person here
+	Hello, Guys! Add a Person here
 </h1>
 
 <c:url var="addAction" value="/person/add" ></c:url>
