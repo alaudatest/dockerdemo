@@ -1,4 +1,4 @@
-FROM shaomq/demo_base
+FROM zuoyue/demo_base
 
 ### Compile ###
 WORKDIR /code
